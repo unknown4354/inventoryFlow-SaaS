@@ -9,9 +9,9 @@ interface MiniChartProps {
 
 const colorConfig = {
   purple: 'from-purple-500 to-purple-300',
-  blue: 'from-blue-500 to-blue-300',
+  blue: 'from-white0 to-white',
   green: 'from-green-500 to-green-300',
-  red: 'from-red-500 to-red-300',
+  red: 'from-white0 to-white',
 }
 
 export function MiniChart({ data, labels, color = 'purple', className }: MiniChartProps) {
@@ -33,7 +33,7 @@ export function MiniChart({ data, labels, color = 'purple', className }: MiniCha
               title={`${data[i]}`}
             />
             {labels && labels[i] && (
-              <span className="text-[10px] text-gray-500 mt-1 group-hover:text-gray-900 transition-colors">
+              <span className="text-[10px] text-white0 mt-1 group-hover:text-black transition-colors">
                 {labels[i]}
               </span>
             )}
@@ -100,8 +100,8 @@ export function ProgressRing({
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="text-2xl font-bold text-gray-900">{Math.round(percentage)}%</span>
-        {label && <span className="text-xs text-gray-500 mt-1">{label}</span>}
+        <span className="text-2xl font-bold text-black">{Math.round(percentage)}%</span>
+        {label && <span className="text-xs text-white0 mt-1">{label}</span>}
       </div>
     </div>
   )

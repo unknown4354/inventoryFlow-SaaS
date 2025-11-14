@@ -36,25 +36,25 @@ export default function DashboardPage() {
   const categoryLabels = ['Elec', 'Struc', 'AV', 'Decor', 'Furn', 'Cater']
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 via-purple-50/30 to-gray-50">
+    <div className="min-h-screen bg-gradient-to-br from-white via-purple-50/30 to-white">
       <header className="sticky top-0 z-50 border-b bg-white/80 backdrop-blur-xl">
         <div className="flex h-16 items-center justify-between px-6">
           <div className="flex items-center gap-3">
-            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-purple-600 to-blue-600 flex items-center justify-center shadow-lg">
+            <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-purple-600 to-black flex items-center justify-center shadow-lg">
               <Package className="h-6 w-6 text-white" />
             </div>
             <div>
-              <h1 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-blue-600 bg-clip-text text-transparent">
+              <h1 className="text-xl font-bold bg-gradient-to-r from-purple-600 to-black bg-clip-text text-transparent">
                 InventoryFlow
               </h1>
-              <p className="text-xs text-gray-500">Smart Inventory Management</p>
+              <p className="text-xs text-white0">Smart Inventory Management</p>
             </div>
           </div>
 
           <div className="flex items-center gap-3">
             <Button variant="ghost" size="icon" className="relative">
               <Bell className="h-5 w-5" />
-              <span className="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full" />
+              <span className="absolute top-1 right-1 h-2 w-2 bg-white0 rounded-full" />
             </Button>
             <Button variant="ghost" size="icon">
               <Settings className="h-5 w-5" />
@@ -68,10 +68,10 @@ export default function DashboardPage() {
 
       <main className="p-6 max-w-[1600px] mx-auto">
         <div className="mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-2">
+          <h2 className="text-3xl font-bold text-black mb-2">
             Welcome back! 👋
           </h2>
-          <p className="text-gray-600">Here's what's happening with your inventory today.</p>
+          <p className="text-black">Here's what's happening with your inventory today.</p>
         </div>
 
         <div className="flex flex-wrap gap-3 mb-6">
@@ -89,11 +89,11 @@ export default function DashboardPage() {
           </Button>
           <div className="flex-1 min-w-[300px] max-w-md">
             <div className="relative">
-              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+              <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-black" />
               <input
                 type="text"
                 placeholder="Search inventory..."
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-white rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent"
               />
             </div>
           </div>
@@ -161,11 +161,11 @@ export default function DashboardPage() {
               <div className="mt-4 flex items-center justify-between text-sm">
                 <div className="flex items-center gap-2">
                   <div className="h-3 w-3 rounded-full bg-purple-500" />
-                  <span className="text-gray-600">Utilization Rate</span>
+                  <span className="text-black">Utilization Rate</span>
                 </div>
                 <div className="text-right">
                   <div className="font-semibold text-purple-600">83.5%</div>
-                  <div className="text-xs text-gray-500">Average</div>
+                  <div className="text-xs text-white0">Average</div>
                 </div>
               </div>
             </CardContent>
@@ -183,15 +183,15 @@ export default function DashboardPage() {
               <MiniChart data={categoryData} labels={categoryLabels} color="blue" className="h-20" />
               <div className="space-y-2 text-sm">
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Electrical</span>
+                  <span className="text-black">Electrical</span>
                   <span className="font-medium">22%</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">Decor</span>
+                  <span className="text-black">Decor</span>
                   <span className="font-medium">31%</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-gray-600">AV Equipment</span>
+                  <span className="text-black">AV Equipment</span>
                   <span className="font-medium">25%</span>
                 </div>
               </div>
@@ -220,12 +220,12 @@ export default function DashboardPage() {
           <Card className="hover:shadow-lg transition-shadow cursor-pointer group">
             <CardContent className="p-6">
               <div className="flex items-center gap-4">
-                <div className="h-12 w-12 rounded-xl bg-blue-100 flex items-center justify-center group-hover:bg-blue-200 transition-colors">
-                  <Package className="h-6 w-6 text-blue-600" />
+                <div className="h-12 w-12 rounded-xl bg-white flex items-center justify-center group-hover:bg-white transition-colors">
+                  <Package className="h-6 w-6 text-black" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Check Out</div>
-                  <div className="text-sm text-gray-500">Assign to event</div>
+                  <div className="font-semibold text-black">Check Out</div>
+                  <div className="text-sm text-white0">Assign to event</div>
                 </div>
               </div>
             </CardContent>
@@ -238,8 +238,8 @@ export default function DashboardPage() {
                   <CheckCircle className="h-6 w-6 text-green-600" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Check In</div>
-                  <div className="text-sm text-gray-500">Return items</div>
+                  <div className="font-semibold text-black">Check In</div>
+                  <div className="text-sm text-white0">Return items</div>
                 </div>
               </div>
             </CardContent>
@@ -252,8 +252,8 @@ export default function DashboardPage() {
                   <AlertCircle className="h-6 w-6 text-yellow-600" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Maintenance</div>
-                  <div className="text-sm text-gray-500">Schedule service</div>
+                  <div className="font-semibold text-black">Maintenance</div>
+                  <div className="text-sm text-white0">Schedule service</div>
                 </div>
               </div>
             </CardContent>
@@ -266,15 +266,15 @@ export default function DashboardPage() {
                   <BarChart3 className="h-6 w-6 text-purple-600" />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900">Reports</div>
-                  <div className="text-sm text-gray-500">View analytics</div>
+                  <div className="font-semibold text-black">Reports</div>
+                  <div className="text-sm text-white0">View analytics</div>
                 </div>
               </div>
             </CardContent>
           </Card>
         </div>
 
-        <div className="mt-8 rounded-2xl bg-gradient-to-r from-purple-600 via-purple-500 to-blue-600 p-8 text-white shadow-2xl">
+        <div className="mt-8 rounded-2xl bg-gradient-to-r from-purple-600 via-purple-500 to-black p-8 text-white shadow-2xl">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="flex-1">
               <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-1 text-sm mb-3">

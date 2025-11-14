@@ -27,7 +27,7 @@ export function StatCard({
       <div className="absolute inset-0 bg-gradient-to-br from-purple-50/50 via-transparent to-transparent" />
 
       <CardHeader className="relative flex flex-row items-center justify-between pb-2">
-        <CardTitle className="text-sm font-medium text-gray-600">
+        <CardTitle className="text-sm font-medium text-black">
           {title}
         </CardTitle>
         <div className="h-10 w-10 rounded-full bg-purple-100 flex items-center justify-center">
@@ -37,14 +37,14 @@ export function StatCard({
 
       <CardContent className="relative">
         <div className="flex items-baseline gap-2">
-          <div className="text-3xl font-bold text-gray-900">{value}</div>
+          <div className="text-3xl font-bold text-black">{value}</div>
           {change && (
             <span
               className={cn(
                 'text-sm font-medium',
                 changeType === 'positive' && 'text-green-600',
-                changeType === 'negative' && 'text-red-600',
-                changeType === 'neutral' && 'text-gray-600'
+                changeType === 'negative' && 'text-black',
+                changeType === 'neutral' && 'text-black'
               )}
             >
               {change}
@@ -53,7 +53,7 @@ export function StatCard({
         </div>
 
         {description && (
-          <p className="text-xs text-gray-500 mt-1">{description}</p>
+          <p className="text-xs text-white0 mt-1">{description}</p>
         )}
 
         {/* Mini trend line */}
