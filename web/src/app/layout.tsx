@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { ThemeProvider } from '@/components/theme-provider'
+import { Toaster } from '@/components/ui/sonner'
+import { AuthProvider } from '@/components/auth/auth-provider'
 
 export const metadata: Metadata = {
   title: 'InventoryFlow - Smart Inventory Management',
@@ -15,16 +17,19 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="bg-white dark:bg-black text-black dark:text-white">
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="light"
-          enableSystem={false}
-          storageKey="inventoryflow-theme"
-          disableTransitionOnChange={false}
-          forcedTheme={undefined}
-        >
-          {children}
-        </ThemeProvider>
+        <AuthProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem={false}
+            storageKey="inventoryflow-theme"
+            disableTransitionOnChange={false}
+            forcedTheme={undefined}
+          >
+            {children}
+            <Toaster />
+          </ThemeProvider>
+        </AuthProvider>
       </body>
     </html>
   )

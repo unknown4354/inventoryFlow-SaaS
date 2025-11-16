@@ -3,11 +3,23 @@ const nextConfig = {
   reactStrictMode: true,
 
   images: {
-    domains: [
-      'ui.aceternity.com',
-      'assets.aceternity.com',
-      'images.unsplash.com',
-      'i.postimg.cc',
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'ui.aceternity.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'assets.aceternity.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.postimg.cc',
+      },
     ],
     formats: ['image/avif', 'image/webp'],
   },

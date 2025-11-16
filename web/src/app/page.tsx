@@ -15,11 +15,12 @@ import React from "react";
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: "default" | "secondary" | "ghost" | "gradient";
   size?: "default" | "sm" | "lg";
+  asChild?: boolean;
   children: React.ReactNode;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ variant = "default", size = "default", className = "", children, ...props }, ref) => {
+  ({ variant = "default", size = "default", className = "", asChild = false, children, ...props }, ref) => {
     const baseStyles = "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md font-medium transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
 
     const variants = {
@@ -35,10 +36,19 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       lg: "h-12 px-8 text-base"
     };
 
+    const classes = `${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`;
+
+    if (asChild) {
+      return React.cloneElement(children as React.ReactElement<{ className?: string; ref?: React.Ref<HTMLElement> }>, {
+        className: classes,
+        ref,
+      });
+    }
+
     return (
       <button
         ref={ref}
-        className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
+        className={classes}
         {...props}
       >
         {children}
@@ -76,11 +86,11 @@ const Navigation = React.memo(() => {
 
           <div className="hidden md:flex items-center gap-4">
             <ThemeToggle />
-            <Button type="button" variant="ghost" size="sm">
-              Sign in
+            <Button type="button" variant="ghost" size="sm" asChild>
+              <a href="/login">Sign in</a>
             </Button>
-            <Button type="button" variant="default" size="sm">
-              Sign Up
+            <Button type="button" variant="default" size="sm" asChild>
+              <a href="/signup">Sign Up</a>
             </Button>
           </div>
 
@@ -130,11 +140,11 @@ const Navigation = React.memo(() => {
               <div className="flex justify-center py-2">
                 <ThemeToggle />
               </div>
-              <Button type="button" variant="ghost" size="sm">
-                Sign in
+              <Button type="button" variant="ghost" size="sm" asChild>
+                <a href="/login">Sign in</a>
               </Button>
-              <Button type="button" variant="default" size="sm">
-                Sign Up
+              <Button type="button" variant="default" size="sm" asChild>
+                <a href="/signup">Sign Up</a>
               </Button>
             </div>
           </div>
